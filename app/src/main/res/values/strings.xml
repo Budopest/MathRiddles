@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MathRiddles</string>
+    <string name="topHeader">Math</string>
+    <string name="secondHeader">Riddles</string>
+    <string name="versionNumber">Version 0.1</string>
+    <string name="playButton">Play</string>
+    <string name="levelsButton">Levels</string>
+    <string name="exitButton">Exit</string>
+    <string name="LevelsActLabel">Levels</string>
+</resources>
