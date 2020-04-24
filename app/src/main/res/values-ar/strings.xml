@@ -7,5 +7,6 @@
     <string name="levelsButton">المراحل</string>
     <string name="exitButton">خروج</string>
     <string name="LevelsActLabel">المراحل</string>
-    <string name="enterbutton">ENTER</string>
+    <string name="enterbutton">ادخل</string>
+    <string name="answertext">الاجابة</string>
 </resources>
