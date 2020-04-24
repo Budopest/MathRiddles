@@ -45,17 +45,18 @@ class LevelsAdapter extends ArrayAdapter<Level> {
         levelNumber.setText("LEVEL "+currentlevel.getLevelNumber());
         TextView levelstatus = (TextView) listItemView.findViewById(R.id.levelStatusText);
         levelstatus.setText(currentlevel.getStatus()==0 ? "UNSOLVED" : "SOLVED");
-
+        /*
         final Context context = getContext();
         listItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(context,levelNumber.getText()+context.toString(),Toast.LENGTH_SHORT);
-                toast.show();
+                //Toast toast = Toast.makeText(context,levelNumber.getText()+context.toString(),Toast.LENGTH_SHORT);
+                //toast.show();
                 Intent Level = new Intent(context,LevelActivity.class);
                 context.startActivity(Level);
             }
         });
+        */
 
         return listItemView;
 

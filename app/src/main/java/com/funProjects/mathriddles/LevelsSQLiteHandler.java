@@ -21,7 +21,7 @@ public class LevelsSQLiteHandler extends SQLiteOpenHelper {
 
     private String createTableQuery = "CREATE TABLE " + levelsTableName +
             "(" +levelID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-            levelNumber + " INTEGER," +
+            levelNumber + " INTEGER UNIQUE," +
             levelResourceID + " INTEGER," +
             levelSolution + " TEXT NOT NULL," +
             levelHint + " TEXT,"+
@@ -34,15 +34,19 @@ public class LevelsSQLiteHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL(createTableQuery);
+        this.insert(db,1,R.drawable.level_1,"23","*2+x",0);
+        this.insert(db,2,R.drawable.level_1,"23","*2+x",0);
+        this.insert(db,3,R.drawable.level_1,"23","*2+x",0);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-    public boolean insert(int number,int resource,String solution,String hint,int status){
-        SQLiteDatabase db = this.getWritableDatabase();
+    public boolean insert(SQLiteDatabase db,int number,int resource,String solution,String hint,int status){
+        //SQLiteDatabase db = this.getWritableDatabase();
         ContentValues  values = new ContentValues();
         values.put(levelNumber,number);
         values.put(levelResourceID,resource);
@@ -65,6 +69,11 @@ public class LevelsSQLiteHandler extends SQLiteOpenHelper {
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+levelsTableName,null);
+        return res;
+    }
+    public Cursor getLevelData(int key) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ levelsTableName +" WHERE "+ levelNumber +" = " + key,null);
         return res;
     }
     public Integer deleteData (int id) {
