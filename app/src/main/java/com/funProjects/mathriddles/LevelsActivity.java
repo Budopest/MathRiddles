@@ -47,8 +47,6 @@ public class LevelsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView levelNumber = (TextView) findViewById(R.id.levelNumberText);
-                Toast toast = Toast.makeText(context,levelNumber.getText()+context.toString(),Toast.LENGTH_SHORT);
-                toast.show();
                 Intent Level = new Intent(context,LevelActivity.class);
                 Level.putExtra("LEVELNUMBER",levels.get(position).getLevelNumber());
                 context.startActivity(Level);

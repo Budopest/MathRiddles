@@ -63,9 +63,6 @@ public class KeyboardFragment extends Fragment implements View.OnClickListener {
         eight.setOnClickListener(this);
         Button nine = (Button) view.findViewById(R.id.number9button);
         nine.setOnClickListener(this);
-        Button enterbutton = (Button) view.findViewById(R.id.enterbutton);
-        enterbutton.setOnClickListener(this);
-
 
         return  view;
 
@@ -105,21 +102,9 @@ public class KeyboardFragment extends Fragment implements View.OnClickListener {
             case R.id.number9button:
                 answer.setText(answer.getText()+"9");
                 break;
-            case R.id.enterbutton:
-                try{
-                    getAnswer(answer);
-                    answer.setText("");
-                }
-                catch (NumberFormatException E) {
-                    Log.e(getActivity().toString(),E.getStackTrace().toString());}
-
+            default:
                 break;
-
         }
 
-    }
-
-    private int getAnswer(EditText answer) throws NumberFormatException{
-        return parseInt(answer.getText().toString());
     }
 }

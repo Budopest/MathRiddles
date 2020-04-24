@@ -61,7 +61,7 @@ public class LevelsSQLiteHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(levelStatus,status);
-        long result = db.update(levelsTableName,values,""+levelID+" =?",new String[]{String.valueOf(id)});
+        long result = db.update(levelsTableName,values,""+levelNumber+" =?",new String[]{String.valueOf(id)});
         Log.v("levels sql update:",String.valueOf(result));
 
         return result !=-1;
