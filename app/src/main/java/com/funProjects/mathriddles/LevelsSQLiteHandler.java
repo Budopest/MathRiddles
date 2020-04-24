@@ -14,6 +14,7 @@ public class LevelsSQLiteHandler extends SQLiteOpenHelper {
     private final static String levelsTableName = "levels";
     private final static String levelID = "level_id";
     private final static String levelNumber = "level_number";
+    private final static String levelResourceID = "level_resource_ID";
     private final static String levelHint =   "level_hint";
     private final static String levelSolution = "level_solution";
     private final static String levelStatus = "level_status";
@@ -21,6 +22,7 @@ public class LevelsSQLiteHandler extends SQLiteOpenHelper {
     private String createTableQuery = "CREATE TABLE " + levelsTableName +
             "(" +levelID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
             levelNumber + " INTEGER," +
+            levelResourceID + " INTEGER," +
             levelSolution + " TEXT NOT NULL," +
             levelHint + " TEXT,"+
             levelStatus + " INTEGER," +
@@ -39,10 +41,11 @@ public class LevelsSQLiteHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-    public boolean insert(int number,String solution,String hint,int status){
+    public boolean insert(int number,int resource,String solution,String hint,int status){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues  values = new ContentValues();
         values.put(levelNumber,number);
+        values.put(levelResourceID,resource);
         values.put(levelSolution,solution);
         values.put(levelHint,hint);
         values.put(levelStatus,status);

@@ -5,12 +5,14 @@ public class Level {
     private String solution;
     private String hint;
     private int status;
+    private int levelResource;
 
-    public Level(int levelNumber, String solution, String hint, int status){
+    public Level(int levelNumber,int levelResource, String solution, String hint, int status){
         this.levelNumber = levelNumber;
         this.solution = solution;
         this.hint = hint;
         this.status = status;
+        this.levelResource = levelResource;
     }
 
     public int getLevelNumber() {
@@ -43,5 +45,13 @@ public class Level {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public int getLevelResource() {
+        return levelResource;
+    }
+
+    public void setLevelResource(int levelResource) {
+        this.levelResource = levelResource;
     }
 }
