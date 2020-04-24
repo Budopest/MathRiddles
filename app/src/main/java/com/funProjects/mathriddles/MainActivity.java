@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent levelsAct = new Intent(mainAct,LevelsActivity.class);
+                        Intent levelsAct = new Intent(mainAct, LevelsActivity.class);
                         startActivity(levelsAct);
                     }
                 }
@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 //System.exit(1);
             }
         });
-
 
 
     }

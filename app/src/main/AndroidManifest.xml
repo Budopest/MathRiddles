@@ -4,17 +4,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/applogo_1"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/applogo_1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LevelActivity"></activity>
         <activity
             android:name=".LevelsActivity"
             android:label="@string/LevelsActLabel"
-            android:parentActivityName=".MainActivity"
-            >
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

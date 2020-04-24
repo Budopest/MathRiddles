@@ -1,6 +1,7 @@
 package com.funProjects.mathriddles;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,8 @@ class LevelsAdapter extends ArrayAdapter<Level> {
             public void onClick(View v) {
                 Toast toast = Toast.makeText(context,levelNumber.getText()+context.toString(),Toast.LENGTH_SHORT);
                 toast.show();
+                Intent Level = new Intent(context,LevelActivity.class);
+                context.startActivity(Level);
             }
         });
 
